@@ -35,7 +35,7 @@ bool PlayScene::init()
 	
 
 	//배경
-	auto Back = Sprite::create("back.png");
+/*	auto Back = Sprite::create("back.png");
 	//Back->setAnchorPoint(Point(0.0,1.0));
 	Back->setTextureRect(CCRectMake(0,0,1200,600));
 	Back->setPosition(Point( visibleSize.width*0.5f, visibleSize.height*0.5f ) );
@@ -45,9 +45,9 @@ bool PlayScene::init()
 	//map->setAnchorPoint(Point(0.0,0.0));
 	map->setTextureRect(CCRectMake(0,0,540,420));
 	map->setPosition(Point( visibleSize.width*0.5f, visibleSize.height*0.5f) );
-	this->addChild(map, 0);
+	this->addChild(map, 0);*/
 	//캐릭터
-	auto img = Sprite::create("img.png",Rect(0,0,100,110));
+	img = Sprite::create("img.png",Rect(0,0,100,110));
 	//map->setAnchorPoint(Point(0.0,0.0));
 	//img->setPosition(Point( visibleSize.width*0.5f, visibleSize.height*0.5f) );
 	img->setPosition(Point(visibleSize.width*0.5f+data->Column*32,visibleSize.height*0.5f+data->Row*32));
@@ -87,11 +87,15 @@ void PlayScene :: doAction(CCObject* pSender)
 	if(!emptyStack(Stack))
 	{
 		data=(mData*)stackTop(Stack);
-		myAction = CCMoveTo::create(2,Point(visibleSize.width*0.5f+data->Column*32,visibleSize.height*0.5f+data->Row*32));
-		img->runAction(myAction);
 		free(popStack(Stack));//스택의 데이터 삭제
 	}
 	//img->runAction(myAction);
 	
-
+	//myAction = MoveTo::create(2,Point(visibleSize.width*0.5f+data->Row,visibleSize.height*0.5f+data->Column));
+	CCLOG("%ddfdlkf", data->Row);
+	CCLOG("출력!");
+	myAction = MoveTo::create(2,Point(100*data->Row,100*data->Column));
+	//auto myAction = MoveTo::create(2,Point(140,140));
+	//img->runAction(MoveTo::create(2,Point(140,140)));
+	img->runAction(myAction);
 }

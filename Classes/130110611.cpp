@@ -22,7 +22,7 @@ void Find :: Findmase()
     
     if((fp=fopen("mase.txt", "r")) == NULL)//파일 열기
 	{
-        puts("file open error: Cannot find mase.txt");
+       // puts("file open error: Cannot find mase.txt");
         exit(0);
     }
 	
@@ -48,7 +48,7 @@ void Find :: Findmase()
 	}
 	if(ss!=1 || dd!=1)//시작점을 찾지 못한경우
 	{
-		printf("시작점 혹은 도착점을 찾을 수 없습니다.\n");
+		//printf("시작점 혹은 도착점을 찾을 수 없습니다.\n");
 		exit(1);
 	}
 	
@@ -113,8 +113,8 @@ void Find :: Findmase()
 				}
 				else//스택이 없을 경우 종료
 				{
-					printf("길을 찾을 수 없습니다.\n");
-					exit(1);
+				//	printf("길을 찾을 수 없습니다.\n");
+					exit(0);
 				}
 			}
 		}
@@ -132,13 +132,13 @@ void Find :: Findmase()
 	}
 	//destroyStack(stack);//모든 스택 삭제
 	
-	for(i=0;i<5;i++)//찾은 길 출력
+/*	for(i=0;i<5;i++)//찾은 길 출력
 	{
 		for(j=0;j<5;j++)
 			printf("%c",ArrMase[i][j]);
 		printf("\n");
 	}
-
+	*/
 }
 
 STACK* Find :: Send()
@@ -149,7 +149,6 @@ void Find :: Check(int &x, int &y)
 {
 	if(!emptyStack(stack))//빈 스택인지 확인
 	{
-		printf("zz\n");
 		mData* data = (mData*)stackTop(stack);//chack에 top을 저장
 	//	if(ArrMase[check->Row][check->Column]!='S' && ArrMase[check->Row][check->Column]!='D')//시작점 도착점 제외
 //			ArrMase[check->Row][check->Column]='+';//스택에 저장된 길 표시
