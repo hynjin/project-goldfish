@@ -17,6 +17,4 @@ public:
 	mData* data;
 	void Findmase();
 	STACK* Send();
-	mData* Dsend();
-	void Check(int &x,int &y);
 };

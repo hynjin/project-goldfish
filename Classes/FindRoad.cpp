@@ -1,4 +1,5 @@
-#include "13011061.h"
+#include "FindRoad.h"
+#include "cocos2d.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -119,18 +120,23 @@ void Find :: Findmase()
 			}
 		}
 	}	
-		
+	
 	//도착한 이후
+	//temp=stack;
+	
 	while(!emptyStack(stack))//빈 스택인지 확인
 	{
 		data = (mData*)stackTop(stack);//chack에 top을 저장
-		if(ArrMase[data->Row][data->Column]!='S' && ArrMase[data->Row][data->Column]!='D')//시작점 도착점 제외
-			ArrMase[data->Row][data->Column]='+';//스택에 저장된 길 표시
+		//if(ArrMase[data->Row][data->Column]!='S' && ArrMase[data->Row][data->Column]!='D')//시작점 도착점 제외
+		//	ArrMase[data->Row][data->Column]='+';//스택에 저장된 길 표시
 		pushStack(temp,(void*)data);
+	
+		//CCLOG("zz  %d\t\n",stack->count);//, data->Row,data->Column);
+		//CCLOG("dd  %d\t%d\n", data->Row,data->Column);
 		popStack(stack);
-	//	free(popStack(stack));//스택의 데이터 삭제
+		free(popStack(stack));//스택의 데이터 삭제
 	}
-	//destroyStack(stack);//모든 스택 삭제
+	destroyStack(stack);//모든 스택 삭제
 	
 /*	for(i=0;i<5;i++)//찾은 길 출력
 	{
@@ -144,20 +150,4 @@ void Find :: Findmase()
 STACK* Find :: Send()
 {
 	return this->temp;
-}
-void Find :: Check(int &x, int &y)
-{
-	if(!emptyStack(stack))//빈 스택인지 확인
-	{
-		mData* data = (mData*)stackTop(stack);//chack에 top을 저장
-	//	if(ArrMase[check->Row][check->Column]!='S' && ArrMase[check->Row][check->Column]!='D')//시작점 도착점 제외
-//			ArrMase[check->Row][check->Column]='+';//스택에 저장된 길 표시
-		x = data->Row;
-		y = data->Column;
-		free(popStack(stack));//스택의 데이터 삭제
-	}
-}
-mData* Find :: Dsend()
-{
-	return this->data;
 }
