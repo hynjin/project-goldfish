@@ -11,7 +11,7 @@ Crush:: Crush()
 		map[i] = new Rect[row];
 		for(int j=0;j<row;j++)
 		{
-			map[i][j] = Rect(visibleSize.width*0.5f+i*60,visibleSize.height*0.5f+j*60,60,60);
+			map[i][j] = Rect(i*60,j*60,60,60);
 		}
 	}
 }

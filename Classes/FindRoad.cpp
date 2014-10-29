@@ -12,7 +12,7 @@ void Find :: Findmase()
     int i,j;//for문에 사용
 	int x,y;//배열 확인에 사용
 	int ss,dd;//시작점,도착점 확인에 사용
-	char ArrMase[6][6]; // dat 파일을 읽어서 mase를 저장하기 위한 배열
+	char ArrMase[8][8]; // dat 파일을 읽어서 mase를 저장하기 위한 배열
     FILE *fp;
     STACK* stack;
 	mData* infor;//가지,행,열 저장 = dataPtr
@@ -28,15 +28,15 @@ void Find :: Findmase()
         exit(0);
     }
 	
-	for(i=0;i<5;i++)//파일안의 값을 읽어 배열에 저장
+	for(i=0;i<7;i++)//파일안의 값을 읽어 배열에 저장
 	{
 			fscanf(fp,"%s",&ArrMase[i]);
 	}
 	fclose(fp);
 
-	for(i=0;i<5;i++)//source 찾기
+	for(i=0;i<7;i++)//source 찾기
 	{
-		for(j=0;j<5;j++)
+		for(j=0;j<7;j++)
 		{
 			if(ArrMase[i][j]=='S')//시작점 찾음
 			{
@@ -51,6 +51,7 @@ void Find :: Findmase()
 	if(ss!=1 || dd!=1)//시작점을 찾지 못한경우
 	{
 		//printf("시작점 혹은 도착점을 찾을 수 없습니다.\n");
+		CCLOG("cannot find road");
 		exit(1);
 	}
 	
@@ -59,7 +60,7 @@ void Find :: Findmase()
 		x=cRow;//현재 위치를 비교할 값에 넣음
 		y=cColumn;
 		PossibleMove = 0;
-		if((ArrMase[x+1][y]=='0' || ArrMase[x+1][y]=='D') && cRow!=4)//아래측 이동 가능한 길 확인
+		if((ArrMase[x+1][y]=='0' || ArrMase[x+1][y]=='D') && cRow!=6)//아래측 이동 가능한 길 확인
 		{
 			cRow=x+1;
 			cColumn=y;
@@ -77,7 +78,7 @@ void Find :: Findmase()
 			cColumn=y-1;
 			PossibleMove++;
 		}
-		if((ArrMase[x][y+1]=='0' || ArrMase[x][y+1]=='D') && cColumn != 4)//우측
+		if((ArrMase[x][y+1]=='0' || ArrMase[x][y+1]=='D') && cColumn != 6)//우측
 		{
 			cRow=x;
 			cColumn=y+1;
