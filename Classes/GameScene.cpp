@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "MainScene.h"
 #include "PlayScene.h"
+#include "ShopScene.h"
 
 Scene* GameScene::createScene()
 {
@@ -28,6 +29,11 @@ void GameScene::goQuit(cocos2d::Ref* pSender)
 	 Director::getInstance()->end();
     exit(0);
 }
+void GameScene::goShop(cocos2d::Ref* pSender )
+{
+	Scene *NextScene = ShopScene::createScene();
+	Director::getInstance()->replaceScene(NextScene);
+}
 
 bool GameScene::init()
 {
@@ -51,8 +57,12 @@ bool GameScene::init()
 											"CloseNormal.png",
 											"CloseSelected.png",
 											CC_CALLBACK_1(GameScene::goQuit, this));
-
-	auto *menu = Menu::create(goPlay, BackToMain, goQuit, NULL);
+	auto goShop = MenuItemImage::create(
+											"goShop.png",
+											"goShop.png",
+											CC_CALLBACK_1(GameScene::goShop, this));
+	//playButton->setPosition(Point( visibleSize.width*0.5f, visibleSize.height*0.5f ) );
+	auto *menu = Menu::create(goPlay, BackToMain, goQuit, goShop, NULL);
 	menu->alignItemsVertically();
 	this->addChild(menu);
 
