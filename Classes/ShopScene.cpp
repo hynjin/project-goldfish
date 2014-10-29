@@ -20,7 +20,7 @@ void ShopScene::TransitionScene(float delta)
 	//Scene *nextScene = TransitionCrossFade::create(0.3,)
 }
 
-
+//아으아아ㅏ아아
 
 bool ShopScene::init()
 {
