@@ -12,6 +12,7 @@ public:
 	void BackToMain(cocos2d::Ref* pSender);
 	void goPlay(cocos2d::Ref* pSender);
 	void goQuit(cocos2d::Ref* pSender);
+	void goShop(cocos2d::Ref* pSender);
     CREATE_FUNC(GameScene);
 };
 

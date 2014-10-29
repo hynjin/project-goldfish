@@ -39,10 +39,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	auto PlayScene = PlayScene::createScene();
 	auto ShopScene = ShopScene::createScene();
 
-
     // run
     director->runWithScene(loadingScene);
-
+	
     return true;
 }
 

@@ -1,7 +1,6 @@
 #include "GameScene.h"
 #include "MainScene.h"
 #include "PlayScene.h"
-#include "ShopScene.h"
 
 Scene* GameScene::createScene()
 {
@@ -61,8 +60,8 @@ bool GameScene::init()
 											"goShop.png",
 											"goShop.png",
 											CC_CALLBACK_1(GameScene::goShop, this));
-	//playButton->setPosition(Point( visibleSize.width*0.5f, visibleSize.height*0.5f ) );
-	auto *menu = Menu::create(goPlay, BackToMain, goQuit, goShop, NULL);
+
+	auto *menu = Menu::create(goPlay, BackToMain, goQuit, NULL);
 	menu->alignItemsVertically();
 	this->addChild(menu);
 

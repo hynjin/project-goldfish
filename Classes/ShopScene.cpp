@@ -3,10 +3,10 @@
 
 Scene* ShopScene::createScene()
 {
-	// * Scene ìƒì„±
+	// * Scene »ý¼º
 	auto scene = Scene::create();
 
-	// * ë°”ë‹¥ êµ¬ë§¤
+	// * ¹Ù´Ú ±¸¸Å
 	ShopScene *layer = ShopScene::create();
 	scene->addChild(layer);
 
