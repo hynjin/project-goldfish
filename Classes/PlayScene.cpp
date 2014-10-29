@@ -25,7 +25,6 @@ bool PlayScene::init()
 	{
 		return false;
 	}
-//	auto winSize = Director::sharedDirector()->getWinSize();
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	auto Sender = CCObject::getReferenceCount();
 	this->schedule(schedule_selector(PlayScene::Action),1.0);
@@ -49,11 +48,11 @@ bool PlayScene::init()
 	this->addChild(map, 0);
 	
 	//캐릭터
-	img = Sprite::create("img.png",Rect(0,0,100,110));
+	girl = Sprite::create("girl.png",Rect(0,0,100,110));
 	//map->setAnchorPoint(Point(0.0,0.0));
-	img->setPosition(Point(visibleSize.width*0.5f+1*60,visibleSize.height*0.5f+0*60));
-	this->addChild(img, 0);
-	guest = Rect(img->getPositionX(),img->getPositionY(),100,110);
+	girl->setPosition(Point(visibleSize.width*0.5f+1*60,visibleSize.height*0.5f+0*60));
+	this->addChild(girl, 0);
+	guest = Rect(girl->getPositionX(),girl->getPositionY(),100,110);
 	//auto ghost = ManageGhost::create();
 
 	//귀신
@@ -83,20 +82,18 @@ void PlayScene :: Action(float f)
 	if(!emptyStack(Stack))
 	{
 		data=(mData*)stackTop(Stack);
-		CCLOG("%d\t%d\n", data->Row,data->Column);
 		myAction = MoveTo::create(1,Point(visibleSize.width*0.5f+data->Column*60,visibleSize.height*0.5f+data->Row*60));
-		img->runAction(myAction);
+		girl->runAction(myAction);
 		free(popStack(Stack));//스택의 데이터 삭제
 	}
 
-	CCLOG("!!");
+	CCLOG("Action!!");
 }
 
 void PlayScene :: GameUpdate(float f)
 {
-	guest = Rect(img->getPositionX(),img->getPositionY(),100,110);
+	guest = Rect(girl->getPositionX()+20,girl->getPositionY()+40,60,60);
 	ghost = Rect(zombi->getPositionX(),zombi->getPositionY(),200,220);
 
-	crush.check(ghost,guest);
-	CCLOG("%d,%d",img->getPositionX(),img->getPositionY());
+	crush.check(guest);
 }

@@ -1,0 +1,7 @@
+id,name,reputation,exp,money_min,money_max,surprise_condition
+1,stu_man,5,2,250,300,1
+2,stu_woman,0,2,250,300,1
+3,adult_man,20,4,300,450,2
+4,adult_woman,25,4,300,450,2
+5,buddhist_monk,70,12,0,250,3
+6,shaman,90,7,450,600,4

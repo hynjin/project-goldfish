@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "ManageGhost.h"
-#include "CheckCrush.h"
+#include "Crush.h"
 //#include "FindRoad.h"
 USING_NS_CC;
 
@@ -17,15 +17,14 @@ public:
 	void callEveryFrame(float f);
 	void GameUpdate(float f);
 	
-	
+	Crush crush;
 	Find find;
 	STACK* Stack;
 	mData* data;
-	CheckCrush crush;
 	Rect ghost;
 	Rect guest;
 
-	cocos2d::Sprite *img;
+	cocos2d::Sprite *girl;
 	cocos2d::Sprite *zombi;
 	cocos2d::CCObject *Sender;
 	//ManageGhost ghost;

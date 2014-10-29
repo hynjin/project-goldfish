@@ -39,13 +39,19 @@
     <ClCompile Include="..\Classes\FindRoad.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CheckCrush.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\ManageGhost.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ManageGuest.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Crush.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\temp.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Touch.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,13 +83,19 @@
     <ClInclude Include="..\Classes\FindRoad.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CheckCrush.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\ManageGhost.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ManageGuest.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Crush.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\temp.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Touch.h">
       <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>

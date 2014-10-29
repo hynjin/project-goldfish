@@ -24,6 +24,7 @@ void Find :: Findmase()
     if((fp=fopen("mase.txt", "r")) == NULL)//파일 열기
 	{
        // puts("file open error: Cannot find mase.txt");
+		CCLOG("cannot open file");
         exit(0);
     }
 	
