@@ -4,7 +4,7 @@
 #include "MainScene.h"
 #include "GameScene.h"
 #include "PlayScene.h"
-
+#include "ShopScene.h"
 
 USING_NS_CC;
 
@@ -37,6 +37,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	auto mainScene = MainScene::createScene();
 	auto gameScene = GameScene::createScene();
 	auto PlayScene = PlayScene::createScene();
+	auto ShopScene = ShopScene::createScene();
 
 
     // run
