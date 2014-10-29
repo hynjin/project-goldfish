@@ -45,7 +45,7 @@ bool Crush :: init()
 {
 	/*
 	auto listener = EventListenerTouchAllAtOnce :: create();
-    //listener->setSwallowTouches(true); //¸ÖÆ¼ÅÍÄ¡ÀÌ±â ¶§¹®¿¡ »ïÅ°¸é ¾ÈµÈ´Ù
+    //listener->setSwallowTouches(true); //ë©€í‹°í„°ì¹˜ì´ê¸° ë•Œë¬¸ì— ì‚¼í‚¤ë©´ ì•ˆëœë‹¤
 	//listener->onTouchesBegan = CC_CALLBACK_2(Crush::onTouchesBegan, this);
 	//EventDispatcher:: getInstance()->addEventListenerWithFixedPriority(listener, 1);
 	
@@ -105,10 +105,10 @@ void Crush::onTouchesEnded(const std::vector<Touch*>&touches, Event* unused_even
 bool Crush :: check(Rect ghost,Rect guest)
 {
 	if(ghost.intersectsRect(guest))
-	{// µÎ ¿µ¿ªÀÌ ±³Â÷µÇ¾î ÀÖ´Â °æ¿ì
+	{// ë‘ ì˜ì—­ì´ êµì°¨ë˜ì–´ ìˆëŠ” ê²½ìš°
 		//CCLOG("%@#@!@#@#%$#%$%#$%");
 	}
-	return true;//Ãæµ¹
+	return true;//ì¶©ëŒ
 }
 */
 /*
@@ -126,3 +126,6 @@ void Crush ::onTouchesBegan(const std::vector<Touch *> &touches, cocos2d::Event 
        CCLOG("location[%d] x=%f, y=%f", i, location[i].x, location[i].y);
    }
 }*/
+
+
+///ì•™ì•„ì•™ì•„ì•„ì•„?
